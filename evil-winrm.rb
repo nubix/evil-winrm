@@ -372,7 +372,7 @@ class EvilWinRM
                             end
                           end
                         rescue
-                            self.print_message("Upload failed. Check filenames or paths!\n\nUsage: upload <local filename> [<absolute remote filename>]", TYPE_ERROR)
+                            self.print_message("Upload failed. Check filenames or paths!\n\nUsage: upload LOCAL_FILENAME [ABSOLUTE_REMOTE_FILENAME]", TYPE_ERROR)
                         end
 
                     elsif command.start_with?('download') then
@@ -385,7 +385,7 @@ class EvilWinRM
                             file_manager.download(download_command[1], download_command[2])
                             self.print_message("Download successful!", TYPE_INFO)
                         rescue
-                            self.print_message("Download failed. Check filenames or paths\n\nUsage: download <absolute remote filename> [local filename]", TYPE_ERROR)
+                            self.print_message("Download failed. Check filenames or paths\n\nUsage: download ABSOLUTE_REMOTE_FILENAME [LOCAL_FILENAME]", TYPE_ERROR)
                         end
 
                     elsif command.start_with?('Invoke-Binary') then
